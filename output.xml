@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.7 on win32)" generated="20221129 19:47:19.531" rpa="false" schemaversion="3">
+<suite id="s1" name="Testlogin" source="c:\Users\kenw\Documents\RobotPratique1\testcases\testlogin.robot">
+<test id="s1-t1" name="TestPositifLogin" line="28">
+<kw name="Ouvrir Navigateur" library="OuvrirNavigateurKeyword" type="SETUP">
+<arg>${url_login}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_login}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221129 19:47:19.845" level="INFO">Opening browser 'gc' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<status status="PASS" starttime="20221129 19:47:19.845" endtime="20221129 19:47:26.152"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221129 19:47:26.152" endtime="20221129 19:47:26.281"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 19:47:26.281" endtime="20221129 19:47:26.378"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:19.844" endtime="20221129 19:47:26.379"/>
+</kw>
+<kw name="Saisir Un Username Valide" library="PageLoginKeywords">
+<arg>${user_valide}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_user}</arg>
+<arg>${user_valide}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:26.383" level="INFO">Typing text 'student' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221129 19:47:26.381" endtime="20221129 19:47:26.478"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:26.380" endtime="20221129 19:47:26.478"/>
+</kw>
+<kw name="Saisir Un Password Valide" library="PageLoginKeywords">
+<arg>${pass_valide}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${txt_pass}</arg>
+<arg>${pass_valide}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:26.482" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20221129 19:47:26.528" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221129 19:47:26.578" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221129 19:47:26.481" endtime="20221129 19:47:26.579"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:26.480" endtime="20221129 19:47:26.579"/>
+</kw>
+<kw name="Login" library="PageLoginKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:26.581" level="INFO">Clicking button 'id:submit'.</msg>
+<status status="PASS" starttime="20221129 19:47:26.580" endtime="20221129 19:47:27.771"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:26.579" endtime="20221129 19:47:27.771"/>
+</kw>
+<kw name="Verifier Login Avec Succes" library="PageAccueilKeywords">
+<arg>${partiel_url_accueil}</arg>
+<arg>${message_login_succes}</arg>
+<arg>${partiel_message_login_succes}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_logout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 19:47:27.773" endtime="20221129 19:47:27.809"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${btn_logout}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221129 19:47:27.819" level="INFO">Current page contains element 'xpath://a[text()='Log out']'.</msg>
+<status status="PASS" starttime="20221129 19:47:27.810" endtime="20221129 19:47:27.820"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${url_accueil}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20221129 19:47:27.826" level="INFO">${url_accueil} = https://practicetestautomation.com/logged-in-successfully/</msg>
+<status status="PASS" starttime="20221129 19:47:27.820" endtime="20221129 19:47:27.826"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${url_accueil}</arg>
+<arg>${partiel_url_accueil}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221129 19:47:27.827" endtime="20221129 19:47:27.827"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${message_login_succes}</arg>
+<arg>${partiel_message_login_succes}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20221129 19:47:27.840" level="INFO">Current page contains text 'Congratulations student. You successfully logged in!'.</msg>
+<status status="PASS" starttime="20221129 19:47:27.828" endtime="20221129 19:47:27.841"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:27.772" endtime="20221129 19:47:27.841"/>
+</kw>
+<kw name="Fermer Navigateur" library="FermerNavigateurKeyword" type="TEARDOWN">
+<arg>${sleep_timer}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${sleep_timer}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221129 19:47:29.844" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221129 19:47:27.843" endtime="20221129 19:47:29.845"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221129 19:47:29.845" endtime="20221129 19:47:31.989"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:27.842" endtime="20221129 19:47:31.989"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:19.843" endtime="20221129 19:47:31.990"/>
+</test>
+<test id="s1-t2" name="TestNegatifUserLogin" line="35">
+<kw name="Ouvrir Navigateur" library="OuvrirNavigateurKeyword" type="SETUP">
+<arg>${url_login}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_login}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221129 19:47:31.994" level="INFO">Opening browser 'gc' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<status status="PASS" starttime="20221129 19:47:31.993" endtime="20221129 19:47:34.124"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221129 19:47:34.124" endtime="20221129 19:47:34.246"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 19:47:34.247" endtime="20221129 19:47:34.291"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:31.993" endtime="20221129 19:47:34.292"/>
+</kw>
+<kw name="Saisir Un Username Invalide" library="PageLoginKeywords">
+<arg>${user_invalide}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_user}</arg>
+<arg>${user_invalide}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:34.297" level="INFO">Typing text 'Incorrect' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221129 19:47:34.295" endtime="20221129 19:47:34.415"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:34.293" endtime="20221129 19:47:34.415"/>
+</kw>
+<kw name="Saisir Un Password Valide" library="PageLoginKeywords">
+<arg>${pass_valide}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${txt_pass}</arg>
+<arg>${pass_valide}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:34.417" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20221129 19:47:34.456" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221129 19:47:34.506" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221129 19:47:34.417" endtime="20221129 19:47:34.506"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:34.416" endtime="20221129 19:47:34.507"/>
+</kw>
+<kw name="Login" library="PageLoginKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:34.511" level="INFO">Clicking button 'id:submit'.</msg>
+<status status="PASS" starttime="20221129 19:47:34.508" endtime="20221129 19:47:34.568"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:34.507" endtime="20221129 19:47:34.568"/>
+</kw>
+<kw name="Verifier Username Invalide Echoue Login" library="PageLoginKeywords">
+<arg>${message_erreur_user}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${alerte_invalide}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 19:47:34.569" endtime="20221129 19:47:34.821"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${alerte_invalide}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221129 19:47:34.829" level="INFO">Current page contains element 'xpath://div[@id='error']'.</msg>
+<status status="PASS" starttime="20221129 19:47:34.821" endtime="20221129 19:47:34.829"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${alerte_invalide}</arg>
+<arg>${message_erreur_user}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221129 19:47:34.831" level="INFO">Verifying element 'xpath://div[@id='error']' contains exact text 'Your username is invalid!'.</msg>
+<status status="PASS" starttime="20221129 19:47:34.830" endtime="20221129 19:47:34.850"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:34.568" endtime="20221129 19:47:34.850"/>
+</kw>
+<kw name="Fermer Navigateur" library="FermerNavigateurKeyword" type="TEARDOWN">
+<arg>${sleep_timer}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${sleep_timer}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221129 19:47:36.858" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221129 19:47:34.852" endtime="20221129 19:47:36.858"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221129 19:47:36.858" endtime="20221129 19:47:38.989"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:34.851" endtime="20221129 19:47:38.989"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:31.992" endtime="20221129 19:47:38.990"/>
+</test>
+<test id="s1-t3" name="TestNegatifPassLogin" line="42">
+<kw name="Ouvrir Navigateur" library="OuvrirNavigateurKeyword" type="SETUP">
+<arg>${url_login}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_login}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221129 19:47:38.994" level="INFO">Opening browser 'gc' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<status status="PASS" starttime="20221129 19:47:38.993" endtime="20221129 19:47:41.279"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221129 19:47:41.280" endtime="20221129 19:47:41.407"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 19:47:41.407" endtime="20221129 19:47:41.447"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:38.992" endtime="20221129 19:47:41.447"/>
+</kw>
+<kw name="Saisir Un Username Valide" library="PageLoginKeywords">
+<arg>${user_valide}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_user}</arg>
+<arg>${user_valide}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:41.452" level="INFO">Typing text 'student' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221129 19:47:41.451" endtime="20221129 19:47:41.572"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:41.450" endtime="20221129 19:47:41.572"/>
+</kw>
+<kw name="Saisir Un Password Invalide" library="PageLoginKeywords">
+<arg>${pass_invalide}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${txt_pass}</arg>
+<arg>${pass_invalide}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:41.574" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20221129 19:47:41.614" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221129 19:47:41.668" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221129 19:47:41.573" endtime="20221129 19:47:41.668"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:41.573" endtime="20221129 19:47:41.669"/>
+</kw>
+<kw name="Login" library="PageLoginKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221129 19:47:41.672" level="INFO">Clicking button 'id:submit'.</msg>
+<status status="PASS" starttime="20221129 19:47:41.671" endtime="20221129 19:47:41.733"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:41.670" endtime="20221129 19:47:41.733"/>
+</kw>
+<kw name="Verifier Password Invalide Echoue Login" library="PageLoginKeywords">
+<arg>${message_erreur_pass}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${alerte_invalide}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 19:47:41.734" endtime="20221129 19:47:41.997"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${alerte_invalide}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221129 19:47:42.005" level="INFO">Current page contains element 'xpath://div[@id='error']'.</msg>
+<status status="PASS" starttime="20221129 19:47:41.998" endtime="20221129 19:47:42.005"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${alerte_invalide}</arg>
+<arg>${message_erreur_pass}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221129 19:47:42.006" level="INFO">Verifying element 'xpath://div[@id='error']' contains exact text 'Your password is invalid!'.</msg>
+<status status="PASS" starttime="20221129 19:47:42.006" endtime="20221129 19:47:42.025"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:41.734" endtime="20221129 19:47:42.026"/>
+</kw>
+<kw name="Fermer Navigateur" library="FermerNavigateurKeyword" type="TEARDOWN">
+<arg>${sleep_timer}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${sleep_timer}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221129 19:47:44.032" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221129 19:47:42.027" endtime="20221129 19:47:44.032"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221129 19:47:44.032" endtime="20221129 19:47:46.189"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:42.026" endtime="20221129 19:47:46.189"/>
+</kw>
+<status status="PASS" starttime="20221129 19:47:38.991" endtime="20221129 19:47:46.190"/>
+</test>
+<status status="PASS" starttime="20221129 19:47:19.536" endtime="20221129 19:47:46.192"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Testlogin">Testlogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
